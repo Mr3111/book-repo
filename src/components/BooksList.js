@@ -45,7 +45,7 @@ export default function ColumnVirtualizationGrid() {
         store.dispatch({type: 'DELETE_ITEM', payload: {id: prodId}})
     }
 
-    const columns = [{field: 'id', hide: true},
+    const columns = [{field: 'id', hide: true, sortable: false},
         {field: 'bookID', headerName: 'Book ID', hide: true, flex: 1},
         {
             field: 'title', headerName: 'Title', flex: 5,
@@ -63,8 +63,8 @@ export default function ColumnVirtualizationGrid() {
                 <Tooltip title={params.value}>
                     <Rating name="half-rating-read" defaultValue={params.value} precision={0.25} readOnly/>
                 </Tooltip>
-
             ),
+            sortComparator: (v1, v2, param1, param2) => param1.row.average_rating - param2.row.average_rating,
         },
         {field: 'isbn', headerName: 'ISBN', width: 150},
         {field: 'language_code', headerName: 'Language', width: 115},
@@ -75,7 +75,7 @@ export default function ColumnVirtualizationGrid() {
                 <div>₹{params.value}</div>),
         },
         {
-            field: 'add_to_cart', headerName: ' ', flex: 1,
+            field: 'add_to_cart', headerName: ' ', flex: 1, sortable: false,
             renderCell: (params) => (
                 <div>{!_.find(cart.items, {id: params.getValue('id')}) ?
                     <Tooltip title='Add to cart'>

@@ -1,12 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import {makeStyles} from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import FloatingCartButton from "./CartButton";
 import ReactVirtualizedTable from "./BooksList";
-
-const _ = require('lodash')
 
 const useStyles = makeStyles((theme) => ({
     heroContent: {
@@ -27,9 +25,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function MainPage({history, selectProduct}) {
     const classes = useStyles();
-    const [data, setData] = useState([]);
-
-
 
     return (
         <React.Fragment>
