@@ -6,7 +6,7 @@ import {createBrowserHistory} from 'history'
 import {Route, Router, Switch} from "react-router";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import Recipes from "./components/Recipes";
+import MainPage from "./components/MainPage";
 import Checkout from "./components/Checkout";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Paper from "@material-ui/core/Paper";
@@ -16,9 +16,6 @@ import OTP from "./components/OTP";
 const history = createBrowserHistory()
 
 class App extends Component {
-    componentDidMount() {
-        this.props.fetchArticleDetails();
-    }
 
     render() {
         return (
@@ -31,7 +28,7 @@ class App extends Component {
                             exact
                             path="/"
                             render={() => (
-                                <Recipes
+                                <MainPage
                                     history={history}
                                 />
                             )}
@@ -59,12 +56,7 @@ class App extends Component {
     }
 }
 
-const mapStateToProps = ({ data = {} }) => ({
-    data
-});
 export default connect(
-    mapStateToProps,
-    {
-        fetchArticleDetails
-    }
-)(App);
+    state => ({}),
+    {}
+)(App)

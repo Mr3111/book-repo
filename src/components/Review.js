@@ -29,9 +29,7 @@ export default function Summary({cartItems, price}) {
                 {cartItems.map((product) => (
                     <ListItem className={classes.listItem} key={Math.random()}>
                         <ListItemText primary={product.title}/>
-                        <Typography variant="body2">₹{product.price}</Typography>
-                        {/*<DeleteIcon onClick={()=>store.dispatch({type:'DELETE_ITEM', id:product.id})}/>*/}
-                    </ListItem>
+                        <Typography variant="body2">₹{product.price}</Typography></ListItem>
                 ))}
                 <ListItem className={classes.listItem}>
                     <ListItemText primary="Total"/>

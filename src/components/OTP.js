@@ -36,6 +36,10 @@ const useStyles = makeStyles((theme) => ({
             padding: theme.spacing(6),
         },
     },
+    helper: {
+        paddingLeft: theme.spacing(4),
+        paddingTop: theme.spacing(1)
+    },
     info: {
         padding: theme.spacing(4)
     },
@@ -124,6 +128,7 @@ export default function OTP() {
                                 />
                             </Grid>
                         </Grid>
+                        <Typography className={classes.helper} color='secondary' variant="body2">Enter 123456 for success flow</Typography>
                         <div className={classes.buttons}>
                             <Button
                                 variant="contained"

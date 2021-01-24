@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function Recipes({history, selectProduct}) {
+export default function MainPage({history, selectProduct}) {
     const classes = useStyles();
     const [data, setData] = useState([]);
 
