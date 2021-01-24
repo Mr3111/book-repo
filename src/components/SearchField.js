@@ -29,8 +29,8 @@ export default function SearchField({handleChange}) {
             <InputBase
                 onChange={(e) => handleChange(e.target.value.toLowerCase())}
                 className={classes.input}
-                placeholder="Search for tasty recipes..."
-                inputProps={{'aria-label': 'search recipes'}}
+                placeholder="Start typing to search..."
+                inputProps={{'aria-label': 'search books'}}
             />
             <IconButton type="submit" className={classes.iconButton} aria-label="search">
                 <SearchIcon/>

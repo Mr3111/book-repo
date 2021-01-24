@@ -5,7 +5,7 @@ import {makeStyles} from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
     footer: {
-        paddingTop: theme.spacing(15),
+        paddingTop: theme.spacing(5),
         padding: theme.spacing(4),
     },
 }));
@@ -17,7 +17,7 @@ export default function Footer() {
             <Typography variant="body2" color="textSecondary" align="center">
                 {'Copyright © '}
                 <Link color="inherit" href="http://localhost:3000/">
-                    Recipe Mall
+                    Book Repo
                 </Link>{' '}
                 {new Date().getFullYear()}
                 {'.'}

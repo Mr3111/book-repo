@@ -28,15 +28,15 @@ export default function Summary({cartItems, price}) {
             <List disablePadding>
                 {cartItems.map((product) => (
                     <ListItem className={classes.listItem} key={Math.random()}>
-                        <ListItemText primary={product.name}/>
-                        <Typography variant="body2">${product.price}</Typography>
+                        <ListItemText primary={product.title}/>
+                        <Typography variant="body2">₹{product.price}</Typography>
                         {/*<DeleteIcon onClick={()=>store.dispatch({type:'DELETE_ITEM', id:product.id})}/>*/}
                     </ListItem>
                 ))}
                 <ListItem className={classes.listItem}>
                     <ListItemText primary="Total"/>
                     <Typography variant="subtitle1" className={classes.total}>
-                        ${price}
+                        ₹{price}
                     </Typography>
                 </ListItem>
             </List>

@@ -1,3 +1,5 @@
+const _ = require('lodash');
+
 const emptyCart = {
     items: [],
     totalPrice: 0
@@ -14,12 +16,17 @@ const CartReducer = (state = initialState, action) => {
             localStorage.setItem('cart', JSON.stringify(newState))
             return newState;
         }
-        // case 'DELETE_ITEM': {
-        //     const items = [...state.items]
-        //     items.splice(action.payload.index, 1)
-        //     const totalPrice = (parseFloat(state.totalPrice) - parseFloat(action.payload.price)).toFixed(2)
-        //     return {...state, items, totalPrice};
-        // }
+        case 'DELETE_ITEM': {
+            const item = _.find(state.items, {id: action.payload.id});
+            console.log('itd', item)
+            const items = state.items.filter(item=> item.id!==action.payload.id);
+            console.log('newItems', items)
+
+            const totalPrice = (parseFloat(state.totalPrice) - parseFloat(item.price)).toFixed(2)
+            const newState = {...state, items, totalPrice}
+            localStorage.setItem('cart', JSON.stringify(newState))
+            return newState;
+        }
         case 'CLEAR_CART': {
             localStorage.setItem('cart', JSON.stringify(emptyCart))
             return emptyCart;

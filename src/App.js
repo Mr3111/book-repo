@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import './App.css'
 import {connect} from 'react-redux'
+import {fetchArticleDetails} from "./actions";
 import {createBrowserHistory} from 'history'
 import {Route, Router, Switch} from "react-router";
 import Footer from "./components/Footer";
@@ -15,6 +16,10 @@ import OTP from "./components/OTP";
 const history = createBrowserHistory()
 
 class App extends Component {
+    componentDidMount() {
+        this.props.fetchArticleDetails();
+    }
+
     render() {
         return (
             <Paper>
@@ -54,7 +59,12 @@ class App extends Component {
     }
 }
 
+const mapStateToProps = ({ data = {} }) => ({
+    data
+});
 export default connect(
-    state => ({}),
-    {}
-)(App)
+    mapStateToProps,
+    {
+        fetchArticleDetails
+    }
+)(App);

@@ -68,7 +68,6 @@ export default function PaymentForm({setValid}) {
         }
 
         for (const [key, value] of Object.entries(newValues)) {
-            console.log(`${key}: ${value}`);
             if (value.includes('_')) {
                 setValid(false)
                 return
