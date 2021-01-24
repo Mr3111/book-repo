@@ -6,7 +6,7 @@ import RemoveShoppingCartIcon from '@material-ui/icons/RemoveShoppingCart';
 import axios from "axios";
 import {Tooltip} from "@material-ui/core";
 import IconButton from "@material-ui/core/IconButton";
-import configureStore from "../store";
+import store from "../store";
 import {useState} from "react";
 import {useSelector} from "react-redux";
 
@@ -35,8 +35,6 @@ function useData() {
 export default function ColumnVirtualizationGrid() {
     const rows = useData();
     const cart = useSelector(state => state.cart);
-
-    const store = configureStore();
 
     const addToCart = (prodId) => {
         const item = _.find(rows, {id: prodId});

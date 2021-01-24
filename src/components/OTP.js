@@ -13,7 +13,7 @@ import TextField from "@material-ui/core/TextField";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import IconButton from "@material-ui/core/IconButton";
 import {Visibility, VisibilityOff} from "@material-ui/icons";
-import configureStore from "../store";
+import store from "../store";
 
 const useStyles = makeStyles((theme) => ({
     layout: {
@@ -61,7 +61,6 @@ const useStyles = makeStyles((theme) => ({
 export default function OTP() {
     const classes = useStyles();
     const cart = useSelector(state => state.cart)
-    const store = configureStore();
 
     let history = useHistory();
 
