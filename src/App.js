@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import './App.css'
 import {connect} from 'react-redux'
-import {fetchArticleDetails} from "./actions";
 import {createBrowserHistory} from 'history'
 import {Route, Router, Switch} from "react-router";
 import Footer from "./components/Footer";
